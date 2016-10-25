@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit-1.0.xsd">
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <!-- 推荐使用file的方式引入，这样可以将配置和代码分离 file:/opt/demo/config/demo-mq.properties-->
+                <value>classpath:mail.properties</value>
+            </list>
+        </property>
+    </bean>
+    <!--  mail -->
+    <import resource="spring-mail.xml" />
+    <bean id="jsonMessageConverter"
+          class="org.springframework.amqp.support.converter.Jackson2JsonMessageConverter">
+        <property name="classMapper" >
+            <bean class="org.springframework.amqp.support.converter.DefaultClassMapper">
+                <property name="defaultType" value="com.rabbitMQ.MQMessage"/>
+            </bean>
+        </property>
+    </bean>
+    <!--1、配置连接工厂, 如果不配置host, port, username, passowrd, 则按默认值localhost:5672, guest/guest-->
+    <rabbit:connection-factory id="connFactory" host="localhost" username="admin" password="admin" port="5672"
+                               channel-cache-size="25"/>
+    <rabbit:admin connection-factory="connFactory"/>
+    <!--2、配置队列queue, Exchange, 以及将他们结合在一起的binding-->
+    <!--在queue以及exchange中, 有一个重要的属性durable, 默认为true, 可以防止宕机后数据丢失。-->
+    <!--在listener-container中, 有acknowledge属性, 默认为auto, 即消费者成功处理消息后必须有个应答,
+        如果消费者程序发生异常或者宕机, 消息会被重新放回队列-->
+    <rabbit:queue id="emailQueue" name="emailQueue" durable="true" auto-delete="false" exclusive="false"/>
+    <!--标准的AMQP Exchange有4种: Direct, Topic, Headers, Fanout, 根据实际需要选择。-->
+    <!--Direct: 如果消息的routing key与bingding的routing key直接匹配的话, 消息将会路由到该队列上。-->
+    <!--Topic: 如果消息的routing key与bingding的routing key符合通配符匹配的话, 消息将会路由到该队列上。-->
+    <!--Headers: 如果消息参数表中的头信息和值都与binding参数表中相匹配, 消息将会路由到该队列上。-->
+    <!--Fanout: 不管消息的routing key和参数表的头信息/值是什么, 消息将会路由到该队列上。-->
+    <rabbit:direct-exchange id="queueEx" name="queueEx">
+        <rabbit:bindings>
+            <rabbit:binding queue="emailQueue" key="mailQ"/>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+    <!--3、配置RabbitTemplate发送消息-->
+    <rabbit:template id="amqpTemplate" connection-factory="connFactory"
+                     message-converter="jsonMessageConverter" exchange="queueEx"/>
+    <!--4、配置监听器容器和监听器来接收消息 消费者 -->
+    <bean id="mailListener" class="com.rabbitMQ.listener.MailListener">
+        <property name="jsonMessageConverter" ref="jsonMessageConverter" />
+        <property name="mailsenderService" ref="mailsenderService" />
+    </bean>
+    <rabbit:listener-container connection-factory="connFactory" acknowledge="auto" auto-startup="true">
+        <rabbit:listener ref="mailListener" queue-names="emailQueue"/>
+    </rabbit:listener-container>
+</beans>

@@ -1,0 +1,150 @@
+﻿@charset "utf-8";
+/* CSS Document */
+*:focus{ outline:none;}
+body{font-family:"Microsoft YaHei","微软雅黑";margin: 0;padding: 0;}
+div{margin:0 auto; padding:0;}
+html{word-wrap:break-word;word-break:break-all;}
+h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,form,input,img,p{margin:0; padding:0;  font-weight:normal;list-style-type:none;}
+img{ border:none;}
+h6, .h6 {font-size: 12px;}
+
+/*链接样式*/
+a:link,a:visited{ color:#333; text-decoration:none;}
+a:hover { color:#FF6600; text-decoration:none;}
+
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+
+@media (max-width:760px){
+.show-l{display:block !important;}
+.hidden-l{display:none !important;}
+}
+.db{display: block;}
+.bc{margin: 0 auto;}
+.text-center{text-align: center;}
+.padding-small{padding: 5px; }
+
+.clearfix:after{content:"."; display:block; height:0; clear:both;visibility:hidden;}
+.clearfix {zoom:1}
+.float-left{float: left !important;}
+.float-right{float: right !important;}
+/**改过后**/
+.soo-common-topcnt{background-color: #f4f4f4;border-bottom: 1px solid #e7e7e7;display: block;width: 100%;}
+.soo-common-top {height: 34px;}
+.soo-common-container{display: block;width:1200px;}
+.soo-common-container,.soo-common-container-layout{margin:0 auto;padding:0px;}
+.soo-common-container a{text-decoration: none;}
+
+.soo-common-topleft{color: #666666;font-size: 12px;float: left;}
+.soo-common-topleft a{display: inline-block;line-height: 34px;margin-right: 5px;color: #666666;}
+
+.soo-common-homeicn{width:15px;float: left;margin-top: 7px;}
+
+.soo-common-topright{float: right;}
+.soo-common-topright ul{float: left;}
+.soo-common-topright li{position: relative;float: left;width: 82px;}
+.soo-common-topright li .soo-common-biaoti{float: left;font-size: 12px;line-height: 34px;color: #666;cursor: pointer;width:100%;padding: 0 15px;text-align: center;background: url(../../shouye/images/xjt.png) 70px center no-repeat;}
+.soo-common-topright li:hover .soo-common-biaoti{background: url(../../shouye/images/sjt.png) 70px center #ffffff no-repeat;color: #000;}
+.soo-common-topright li:hover .soo-common-hidecnt{display: block;}
+.soo-common-topright li a{display: block;text-align: center;font-size: 12px;line-height: 34px;color: #666;}
+.soo-common-topright .soo-common-hidecnt{position: absolute;top: 34px;left: auto;right: -20px;width: 170px;height: 200px;display: none;}
+.soo-common-topright .soo-common-item{background:#ffffff;color:#333;text-align:left;border:#dddddd 1px solid;border-width:0 1px 1px 1px;position:relative;padding:10px 0; z-index:10000; height:100px;}
+.soo-common-topright .soo-common-item span{display: block;padding: 2px 0;height: 30px;}
+.soo-common-topright .soo-common-item i{display: block;margin: 3px 11px;border-top: #EBEBEC 1px solid;border-bottom: #FFF 1px solid;}
+.soo-common-topright .soo-common-item span a{display: block;text-align: center;font-size: 12px;height: 30px;line-height: 30px;color: #888;}
+.soo-common-topright .soo-common-item span a:hover{background-color: #f4f4f4;}
+.soo-common-topright .soo-common-hidecnt .h200{height: 200px;}
+
+
+
+/*头部开始*/
+.soo-common-head{ width:1200px;margin:0 auto; height:94px; line-height:74px;padding:10px 0;}
+.soo-common-head .soo-common-logo{ width:500px;}
+.soo-common-head .soo-common-search,.soo-common-head .soo-common-logo{ float:left; display:inline;*line-height:74px;}
+.soo-common-head .soo-common-search{ width:490px; padding:19px 0;}
+.soo-common-searchmenu{position: relative;width: 80px;float: left;}
+.soo-common-searchmenu .soo-common-searchselect {font-family: "Microsoft YaHei", 微软雅黑, "Microsoft JhengHei", 华文细黑, STHeiti, MingLiu;color: #666;cursor: pointer;font-size: 12px;height: 35px;line-height: 33px;text-align: center;width: 100%;background: url(../../../www.scmking.com/new/images/x.png) right 13px no-repeat;border: 1px solid #cbcbcb;border-width:1px 0px 1px 1px;box-sizing:content-box;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;}
+.soo-common-searchmenu:hover .soo-common-searchselect{background:#fbfbfb url(../../../www.scmking.com/new/images/s.png) right 13px no-repeat;}
+.soo-common-searchtab{display:none; position:absolute;top:34px;width:100%;border:1px solid #cbcbcb;border-width:0px 0px 1px 1px;border-top:0;background:#fff;padding-top: 3px;z-index:10001;}
+.soo-common-searchmenu:hover .soo-common-searchtab{display: block;}
+.soo-common-searchtab li{font-family: "Microsoft YaHei", 微软雅黑,\9ed1\4f53,\5b8b\4f53, "Microsoft JhengHei", 华文细黑, STHeiti, MingLiu;width:100%;height:34px;border-right: 1px solid #cbcbcb;line-height:34px;color:#666;font-size:12px;text-align: center;cursor:pointer;}
+.soo-common-searchtab li:hover{background:#f4f4f4;color:#000;}
+
+.soo-common-searchcntbrt{float: left;border: 1px solid #cbcbcb;border-width:1px 0px 1px 0px;}
+.soo-common-head .soo-common-search .soo-common-input{ width:300px;border:0px;float:left;color:#cccccc; height:35px;line-height:35px; background:#ffffff;  padding-left:8px; display:inline;font-size:14px;;}
+.soo-common-head .soo-common-search .soo-common-button{cursor: pointer;float:left; background:url(../../2014index/images/wlss.jpg) no-repeat; width:96px; height:37px; border:0; display:inline;}
+
+.soo-common-head .soo-common-login{ float:left; text-align:right; width:210px;_width:210px;color:#666666; display:inline; height:74px; line-height:74px; position:relative;}
+.soo-common-head .soo-common-login a{font-size:14px; color:#666666;font-size:15px;}
+.soo-common-head .soo-common-login a:hover{color:#ef4d22;}
+.soo-common-head .soo-common-login span{ margin:0px 12px;}
+.soo-common-head .soo-common-login .soo-common-pic{ background:url(../../2014index/images/dwl.jpg) no-repeat; width:25px; height:20px; float:left; position:absolute; left:73px; top:27px;}
+
+/*导航开始*/
+.soo-common-mainnav{ background:url(../../../mall.soo56.com/UserControls/images/topbj.gif) left 35px repeat-x;_background:url(../../../mall.soo56.com/UserControls/images/topbj.gif) left 35px repeat-x;height:37px;}
+.soo-common-navmain{width:1200px; margin:0 auto;line-height:35px; height:35px;}
+.soo-common-navmain .soo-common-nav-left{ width:220px; display:inline;float: left;}
+/**hover效果**/
+.soo-common-navmain .soo-common-nav-left:hover .soo-common-title{background: url(../../shouye/images/s.png) right 10px center #ff4700 no-repeat;}
+.soo-common-navmain .soo-common-nav-left .soo-common-title{display: block;width:190px; font-size:16px; color:#ffffff;text-align:center;background: url(../../shouye/images/x.png) right 10px center #ff4700 no-repeat;}
+
+.soo-common-navmain .soo-common-nav-left .soo-common-nav-wrap{display: none;}
+.soo-common-navmain .soo-common-nav-left:hover .soo-common-nav-wrap{display: block;}
+.soo-common-nav{ position: relative; width:1200px; margin: 0 auto;}
+
+.soo-common-navmain .soo-common-nav-r{float: left;width:790px; display:inline;color:#333333;}
+.soo-common-navmain .soo-common-nav-r .soo-common-nav-a a{ padding:7px 20px;font-size:16px;font-family: "微软雅黑","Microsoft YaHei";}
+.soo-common-navmain .soo-common-nav-r .soo-common-nav-a a:hover{ color:#ff4700; }
+.soo-common-navmain .soo-common-nav-r ul{float: left;}
+.soo-common-navmain .soo-common-nav-r ul li{ position:relative;z-index:10000;float: left;}
+.soo-common-navmain .soo-common-nav-r ul li:hover .soo-common-pulldown{display: block;}
+.soo-common-navmain .soo-common-nav-r .soo-common-erji{position:absolute; left:0;top:35px; background:#ffffff; width:100%; z-index:10000;width:795px;border:#dddddd 1px solid; border-top:none;filter:alpha(Opacity=93);-moz-opacity:0.93;opacity: 0.93; padding-left:23px; display:none;z-index:100000;}
+.soo-common-navmain .soo-common-nav-r .soo-common-erji a{ color:#000000; font-size:14px; padding:5px 10px;float:left; margin:0 5px; position:relative;}
+.soo-common-navmain .soo-common-nav-r .soo-common-erji a:hover{ background:#cccccc; color:#333;}
+
+.soo-common-navmain .soo-common-nav-r .soo-common-appcase{left:-206px;*left:-191px;}
+.soo-common-navmain .soo-common-nav-r .soo-common-news{left:-326px;*left:-270px;}
+.soo-common-navmain .soo-common-nav-r .soo-common-huizhan{left:-408px;*left:-357px;}
+
+
+
+/*分类代码*/
+.soo-common-wd354{ width:374px;padding-right:20px;}
+.soo-common-goods{ position: absolute; top: 0;left: 0;}
+.soo-common-goodlist{ position: absolute;top:0px;left: 0;width:190px;height:480px;background: #2d2d2d;overflow: visible;z-index: 999;}
+.soo-common-goodlist .soo-common-goodlist-item{width: 190px;height: 36px;}
+.soo-common-goodlist .soo-common-goodlist-item .soo-common-goodlist-product{position: absolute;z-index:999; width: 190px;}
+.soo-common-goodlist .soo-common-goodlist-item .soo-common-goodlist-product:hover{background-color:#4a4a4a;}
+.soo-common-goodlist .soo-common-goodlist-item .soo-common-goodlist-product h3{height: 34px;font-weight: normal;line-height: 36px; padding-left:20px; position:relative; z-index:999; cursor:pointer;color: #ffffff;font-size: 14px;font-family: "微软雅黑";}
+.soo-common-goodlist .soo-common-goodlist-item .soo-common-goodlist-product h3 a{color: #ffffff;font-size: 14px;font-family: "微软雅黑";margin-right: 10px;}
+.soo-common-goodlist .soo-common-goodlist-item .soo-common-goodlist-product h3 a:hover{text-decoration:underline;}
+.soo-common-goodlist .soo-common-product-wrap{ width:1010px; height:482px;display:none; position:absolute;left: 190px; top: 0px;}
+.soo-common-goodlist .soo-common-goodlist-item:hover .soo-common-product-wrap{display: block;}
+
+/*展开的分类*/
+.soo-common-goodlist .soo-common-zhankai{ position: absolute; width:664px; z-index: 99; height:482px; border:2px solid #F0F0F0; background: #ffffff;padding:15px 20px;filter:alpha(Opacity=93);-moz-opacity:0.93;opacity: 0.93;}
+.soo-common-goodlist .soo-common-zhankai p{ color:#343434; font-size:12px;}
+.soo-common-goodlist .soo-common-zhankai h2{font-weight: bold; height:25px;}
+.soo-common-goodlist .soo-common-zhankai h2 span,.soo-common-goodlist .soo-common-zhankai h2 span a{ font-size:12px; color:#999999;}
+.soo-common-goodlist .soo-common-zhankai h2 a{height: auto;line-height: 16px;color: #333;padding-left: 0; margin-right:10px; font-size:15px;}
+.soo-common-goodlist .soo-common-zhankai ul li{ float: left; display: inline; width:118px; height:25px; line-height:25px;white-space:nowrap;}
+.soo-common-goodlist .soo-common-zhankai ul li a{ color: #666666;display: inline-block;text-decoration: none; font-weight:bold;font-size:12px;}
+.soo-common-goodlist .soo-common-zhankai ul li a:hover{ text-decoration: none; color: #ff6600;}
+.soo-common-goodlist .soo-common-zhankai div dd,.soo-common-goodlist .soo-common-zhankai div dl a{ display:block;}
+.soo-common-goodlist .soo-common-zhankai ul{ border-top:1px solid #DADADA; padding-bottom:15px; padding-top:8px;}
+.soo-common-goodlist .soo-common-zhankai .soo-common-width80 li{ width:80px;}
+.soo-common-goodlist .soo-common-zhankai .soo-common-width50 li{ width:50px;}
+.soo-common-goodlist .soo-common-zhankai .soo-common-tjpp{ float:left; width:245px; padding-left:20px; border-left: 1px solid #eeeeee;}
+.soo-common-goodlist .soo-common-zhankai .soo-common-tjpp .soo-common-tjpp-tit{line-height: 36px;font-size:15px; color:#FF4700;}
+.soo-common-goodlist .soo-common-zhankai .soo-common-tjpp .soo-common-tjpp-nr{ line-height:25px;}
+.soo-common-goodlist .soo-common-zhankai .soo-common-tjpp .soo-common-tjpp-nr a{ font-size:14px; display:inline-block; width:100px;float:left;margin-right: 15px;margin-bottom:10px;}
+.soo-common-goodlist .soo-common-zhankai .soo-common-tjpp .soo-common-tjpp-nr a:nth-child(2n){margin-right: 0px;}
+.soo-common-goodlist .soo-common-zhankai .soo-common-tjpp .soo-common-tjpp-nr a img{display: inline-block;}
+
+
+/**soo56手机版**/
+.toplayer-forphone{position: relative;height: 35px;width: 130px;float: right !important;background: url(../../shouye/images/phone.png) right no-repeat;}
+.toplayer-forphone .layercnt{position: absolute;width: 132px;height: 285px;border: 1px solid #ff4700;border-radius: 4px;background: #fff;top: 35px;right: 0px;z-index:999;display: none;}
+.toplayer-forphone:hover .layercnt{display: block;}
+.toplayer-forphone .layercnt span{display: block;width: 100%;font-size: 14px;color: #666;text-align: center;}
+.toplayer-forphone .layercnt img{display: block;margin: 0 auto;width: 100px;}
